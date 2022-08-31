@@ -14,6 +14,7 @@ func InitApp() *gin.Engine {
 	ctx := context.Background()
 
 	client := utils.InitClient()
+	defer client.Close()
 
 	err := client.Set(ctx, "key", "value", 0).Err()
 	if err != nil {

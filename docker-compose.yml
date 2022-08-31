@@ -6,6 +6,8 @@ services:
           - .env
         environment:
             - SERVER_DSN=0.0.0.0:5000
+            - REDIS_PASS=the-stronge-one
+            - REDIS_DNS=redisdb:6379
         ports:
             - 5000:5000
         depends_on:
@@ -22,3 +24,9 @@ services:
 
     redisdb:
         image: redis:7.0
+        environment:
+        - ALLOW_EMPTY_PASSWORD=false 
+        - REDIS_PASSWORD=the-stronge-one
+        - REDIS_DISABLE_COMMANDS=FLUSHDB,FLUSHALL
+        ports:
+        - '6379:6379'
