@@ -13,19 +13,9 @@ import (
 func InitApp() *gin.Engine {
 	ctx := context.Background()
 
-	client := utils.InitClient()
-	defer client.Close()
-
-	err := client.Set(ctx, "key", "value", 0).Err()
-	if err != nil {
-		panic(err)
-	}
-
-	val, err := client.Get(ctx, "key").Result()
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println("key", val)
+ 	// init client
+	// logging that client is inited
+	// defer close client
 
 	app := gin.New()
 	app.Use(gin.Recovery())

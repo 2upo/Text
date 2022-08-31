@@ -12,7 +12,7 @@ var (
 
 type Configuration struct {
 	ServerDsn     string
-	RedisPass     string
+	RedisPassword string
 	RedisDsn      string
 	RedisUsername string
 }
@@ -21,7 +21,7 @@ func Config() *Configuration {
 	onceConfig.Do(func() {
 		configuration = Configuration{
 			ServerDsn:     os.Getenv("SERVER_DSN"),
-			RedisPass:     os.Getenv("REDIS_PASS"),
+			RedisPassword:  os.Getenv("REDIS_PASSWORD"),
 			RedisDsn:      os.Getenv("REDIS_DNS"),
 			RedisUsername: os.Getenv("REDIS_USERNAME"),
 		}
