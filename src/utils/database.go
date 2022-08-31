@@ -12,3 +12,10 @@ func InitClient() *redis.Client {
 
 	return client
 }
+// // TODO: make the same as in Jobs-api
+
+// func RedisClient() -> возвращяет экземпляр
+
+// func InitClient() -> инициализирует клиент синглтон
+
+// CloseClient -> закрывает соединение

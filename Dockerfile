@@ -1,4 +1,4 @@
-FROM golang:buster
+FROM golang:1.17-buster
 
 COPY ./src/go.mod /app/
 COPY ./src/go.sum /app/
